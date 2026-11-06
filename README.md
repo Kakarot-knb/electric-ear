@@ -1,43 +1,63 @@
-# RESONANCE — Hear What an Implant Hears
+# RESONANCE — Beyond What We Hear
+### How Technology Helps People Hear Again
 
-A visual-first bioacoustic and neuroprosthetics research exhibition exploring human auditory biomechanics and cochlear implant signal processing.
+An interactive physics and bioacoustics exhibition exploring sound waves, the human ear, hearing loss, hearing aids, and cochlear implants with a live wave simulator.
 
-## Overview
+---
 
-RESONANCE is an interactive, single-page educational application designed for Grade 11 Physics students and enthusiasts. It models the human auditory system as a multi-stage physical transducer and demonstrates how neuroprosthetics restore hearing to individuals with sensorineural deafness.
+## ✨ Features
 
-Key capabilities include:
-- Zero-latency Acoustic Wave & Longitudinal Particle Simulator with bidirectional frequency and wavelength synchronization.
-- Real-time mathematical telemetry HUD displaying wave speed, frequency, wavelength, period, angular frequency, wavenumber, and sound pressure level.
-- Dual-View Scientific Diagrams allowing visitors to toggle between motion graphics animations and detailed anatomical illustrations.
-- Clinical hearing loss simulations comparing healthy audition, conductive attenuation, sensorineural hair cell damage, and cochlear neuroprosthetic vocoding.
-- Interactive Basilar Membrane Analyzer mapping frequency to tonotopic basilar position using Greenwood's equation.
-- Shannon Channel Capacity calculations and continuous channel vocoder audio synthesis powered by Web Audio API DSP.
+- **Live Acoustic Wave & Particle Simulator:** Real-time canvas simulation showing air compression waves, longitudinal particle displacement, frequency, wavelength, amplitude, and medium presets (Air, Water, Steel, Custom).
+- **Interactive Auditory Pathway:** Multi-stage breakdown from the outer pinna, tympanic membrane, ossicles, fluid cochlea, to electrical auditory nerve impulses.
+- **Hearing Loss Diagnostic & Hair Cell Explorer:** Visual organ of Corti modeling stereocilia damage across mild, moderate, severe, and profound sensorineural hearing loss.
+- **Hearing Aids vs Cochlear Implants:** In-depth technical comparison, component anatomy, energy transformation chains, and multi-generation processor evolution.
+- **Interactive Dual-View Diagrams:** Animated motion view and high-fidelity scientific illustrations.
+- **Offline & Self-Contained:** High-resolution assets and imagery stored locally in `/assets/images/` for zero hotlink blocking and fast offline capability.
+- **Fully Pre-rendered SSR + React Hydration:** Ultra-fast load times with interactive client-side React hydration and zero console errors.
 
-## Architecture
+---
 
-- **Format:** Fully self-contained single-page application (`index.html`) with zero backend dependencies and zero paid services.
-- **Visual Aesthetic:** Premium scientific editorial journal palette with warm ivory paper, muted forest green, terracotta clay, and soft sage accents. Zero gradients, 100% solid colors.
-- **Audio DSP:** Web Audio API synthesis and real-time Fast Fourier Transform (FFT) analysis.
+## 🚀 Quick Start
 
-## Getting Started
-
-### Local Development
-To run the verification suite and verify all interactive components:
+### 1. Run Locally
+To start the local web server:
 ```bash
-node verify_complete_site.js
+npm start
+```
+Open [http://localhost:8080](http://localhost:8080) in your browser.
+
+### 2. Run Automated Verification Tests
+To run the automated suite testing HTML integrity, assets, and HTTP responses:
+```bash
+npm test
 ```
 
-To build or recompile `index.html`:
+### 3. Build & Sync for Production / Vercel
+To sync assets and prepare the `public/` directory:
 ```bash
-node build_full_site.js
+npm run build
 ```
 
-To serve locally:
-```bash
-npx serve .
-```
-or open `index.html` directly in any modern web browser.
+---
 
-## License
+## 📁 Project Structure
+
+```
+├── index.html                 # Main website entry point (SSR pre-rendered + hydrated)
+├── assets/
+│   ├── styles-DeJe8TIu.css    # Full application stylesheets & Tailwind layout
+│   ├── index-Bc0M62SV.js      # Core React & routing runtime
+│   ├── routes-DHy1J_uN.js     # Interactive components, canvas simulator & pages
+│   └── images/                # High-resolution local image assets
+├── public/                    # Production output directory (synced for Vercel/Netlify)
+├── server.js                  # Lightweight local preview HTTP server
+├── process_clone.js           # Production build & asset sync script
+├── test_clone.js              # Automated verification test script
+├── package.json               # Scripts and metadata
+└── vercel.json                # Vercel deployment configuration
+```
+
+---
+
+## 📄 License
 MIT

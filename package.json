@@ -1,20 +1,22 @@
 {
-  "name": "resonance-electric-ear",
+  "name": "resonance-cloned",
   "version": "1.0.0",
-  "description": "RESONANCE: Hear what an implant hears - A visual-first bioacoustics and cochlear neuroprosthetics exhibition",
+  "description": "RESONANCE — Beyond What We Hear: How Technology Helps People Hear Again",
   "main": "index.html",
   "scripts": {
-    "build": "node build_full_site.js",
-    "test": "node verify_complete_site.js"
+    "build": "node process_clone.js",
+    "start": "node server.js",
+    "preview": "node server.js",
+    "test": "node test_clone.js"
   },
   "keywords": [
-    "bioacoustics",
+    "resonance",
+    "hearing",
+    "acoustics",
+    "wave-simulator",
     "cochlear-implant",
-    "physics",
-    "web-audio-api",
-    "hearing-science",
-    "educational"
+    "physics"
   ],
-  "author": "Kakarot-knb",
+  "author": "",
   "license": "MIT"
 }
