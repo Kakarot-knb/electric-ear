@@ -1,0 +1,20 @@
+{
+  "name": "resonance-electric-ear",
+  "version": "1.0.0",
+  "description": "RESONANCE: Hear what an implant hears - A visual-first bioacoustics and cochlear neuroprosthetics exhibition",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build_full_site.js",
+    "test": "node verify_complete_site.js"
+  },
+  "keywords": [
+    "bioacoustics",
+    "cochlear-implant",
+    "physics",
+    "web-audio-api",
+    "hearing-science",
+    "educational"
+  ],
+  "author": "Kakarot-knb",
+  "license": "MIT"
+}
