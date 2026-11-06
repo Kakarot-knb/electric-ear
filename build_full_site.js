@@ -1480,4 +1480,8 @@ console.log('PASS: Client JavaScript syntax is valid and error-free.');
 
 // 5. Output file
 fs.writeFileSync('index.html', fullHtml, 'utf8');
-console.log('SUCCESS: Generated index.html (' + (fullHtml.length / 1024).toFixed(1) + ' KB)');
+if (!fs.existsSync('public')) {
+  fs.mkdirSync('public', { recursive: true });
+}
+fs.writeFileSync('public/index.html', fullHtml, 'utf8');
+console.log('SUCCESS: Generated index.html and public/index.html (' + (fullHtml.length / 1024).toFixed(1) + ' KB)');
