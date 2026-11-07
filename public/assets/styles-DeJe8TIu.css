@@ -183,3 +183,160 @@ button.fixed.bottom-6 {
   right: max(1.25rem, calc(env(safe-area-inset-right, 0px) + 1.25rem)) !important;
   bottom: max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 1.25rem)) !important;
 }
+
+/* Custom responsive utility extensions for simulator */
+.gap-x-4{column-gap:calc(var(--spacing) * 4)}
+.gap-x-5{column-gap:calc(var(--spacing) * 5)}
+.gap-x-6{column-gap:calc(var(--spacing) * 6)}
+.gap-y-2{row-gap:calc(var(--spacing) * 2)}
+.gap-y-3{row-gap:calc(var(--spacing) * 3)}
+.pt-0\.5{padding-top:calc(var(--spacing) * 0.5)}
+.pt-1{padding-top:calc(var(--spacing) * 1)}
+.no-scrollbar::-webkit-scrollbar{display:none}
+.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+
+@media (max-width: 639px) {
+  .rounded-2xl.bg-secondary .katex-display {
+    font-size: 0.88em;
+    margin: 0.5em 0;
+  }
+}
+
+/* ==========================================================================
+   RESONANCE Master Smooth Animation & Polish System
+   ========================================================================== */
+
+/* 1. Global Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Scroll-Triggered Content Reveal */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for grid children */
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.16s; }
+.stagger-3 { transition-delay: 0.24s; }
+.stagger-4 { transition-delay: 0.32s; }
+.stagger-5 { transition-delay: 0.40s; }
+.stagger-6 { transition-delay: 0.48s; }
+
+/* 3. Card Hover Elevation */
+.rounded-2xl, .rounded-3xl {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+.card-hover:hover,
+.bg-card.border:hover {
+  box-shadow: 0 12px 30px -8px oklch(0% 0 0 / 0.07), 0 4px 10px -4px oklch(0% 0 0 / 0.03);
+}
+
+/* 4. Button & Interactive Micro-Interactions */
+button, a {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 0.22s;
+}
+button:active {
+  transform: scale(0.975);
+}
+
+/* 5. Custom Range Sliders */
+input[type=range].sim {
+  transition: opacity 0.2s ease;
+}
+input[type=range].sim::-webkit-slider-thumb {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease;
+}
+input[type=range].sim::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+  box-shadow: 0 2px 10px oklch(0% 0 0 / 0.35);
+}
+input[type=range].sim:active::-webkit-slider-thumb {
+  transform: scale(1.25);
+  cursor: grabbing;
+}
+input[type=range].sim::-moz-range-thumb {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease;
+}
+input[type=range].sim::-moz-range-thumb:hover {
+  transform: scale(1.18);
+}
+input[type=range].sim:active::-moz-range-thumb {
+  transform: scale(1.25);
+}
+
+/* 6. Scientific Diagram & SVG Transitions */
+svg {
+  shape-rendering: geometricPrecision;
+}
+svg path, svg circle, svg line, svg rect {
+  transition: stroke 0.3s cubic-bezier(0.16, 1, 0.3, 1), fill 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* 7. Collapsible / Accordion Smooth Transitions */
+details {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+details summary span {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+details[open] > div {
+  animation: detailsFadeDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes detailsFadeDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 8. Top Navbar & Back to Top */
+header div.bg-primary {
+  transition: width 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+button[aria-label="Back to top"] {
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease !important;
+}
+button[aria-label="Back to top"]:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+  box-shadow: 0 16px 32px -8px oklch(0% 0 0 / 0.35) !important;
+}
+
+/* 9. Accessibility (Reduced Motion) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+.pt-6 { padding-top: 1.5rem; }
+.border-background\/20 { border-color: var(--background); }
+@supports (color:color-mix(in lab, red, red)){
+  .border-background\/20 { border-color: color-mix(in oklab, var(--background) 20%, transparent); }
+}
+
+.pr-16 { padding-right: 4rem; }
+@media (min-width: 640px) {
+  .sm\:pr-0 { padding-right: 0px; }
+}
+
+.pb-6 { padding-bottom: 1.5rem; }
+@media (min-width: 640px) {
+  .sm\:pb-0 { padding-bottom: 0px; }
+}
