@@ -345,7 +345,6 @@ button[aria-label="Back to top"]:hover {
 .sketchfab-embed-wrapper {
   position: relative;
   width: 100%;
-  flex: 1 1 auto;
   aspect-ratio: 16 / 10;
   min-height: 320px;
   overflow: hidden;
@@ -354,9 +353,8 @@ button[aria-label="Back to top"]:hover {
 
 @media (min-width: 768px) {
   .sketchfab-embed-wrapper {
-    aspect-ratio: auto;
-    height: 100%;
-    min-height: 450px;
+    aspect-ratio: 16 / 10;
+    min-height: 420px;
   }
 }
 

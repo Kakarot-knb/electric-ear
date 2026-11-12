@@ -59,7 +59,7 @@ html = html.replace(/href="\/assets\//g, 'href="./assets/');
 const faviconTags = `<link rel="icon" type="image/png" href="./favicon.png?v=3"/>\n<link rel="icon" type="image/x-icon" href="./favicon.ico?v=3"/>\n<link rel="shortcut icon" href="./favicon.ico?v=3"/>\n<link rel="apple-touch-icon" href="./favicon.png?v=3"/>`;
 
 if (html.includes('rel="icon"')) {
-  html = html.replace(/<link[^>]*rel="(?:shortcut )?icon"[^>]*\/?>/gi, '');
+  html = html.replace(/<link[^>]*rel="(?:shortcut |apple-touch-)?icon"[^>]*\/?>\s*/gi, '');
   html = html.replace('</head>', `${faviconTags}\n</head>`);
 }
 
