@@ -447,6 +447,23 @@ body, h1, h2, h3, h4, p, li, button, span, figcaption {
   height: 100% !important;
 }
 
+#implants .ci-3d-wrapper {
+  position: relative !important;
+  aspect-ratio: 4 / 5 !important;
+  min-height: 320px !important;
+  max-height: none !important;
+  flex: 1 1 auto !important;
+  width: 100% !important;
+}
+
+@media (min-width: 768px) {
+  #implants .ci-3d-wrapper {
+    aspect-ratio: unset !important;
+    min-height: 0 !important;
+    height: 100% !important;
+  }
+}
+
 .sketchfab-embed-wrapper iframe {
   position: absolute;
   top: 0;
