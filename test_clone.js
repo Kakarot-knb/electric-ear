@@ -28,7 +28,7 @@ async function runTests() {
     'assets/images/digital_bte.jpg',
     'assets/images/oticon_ric.jpg',
     'assets/images/vintage_beltone.jpg',
-    'assets/images/cochlear_implant_2.jpg',
+    'assets/images/cochlear_implant_user1.jpg',
     'assets/images/cochlear_implant_user.jpg',
     'assets/images/four_generations.jpg',
     'assets/images/audiologist.jpg',

@@ -20,11 +20,11 @@ const imgMap = [
   },
   {
     original: 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Cochlear_implant_2.jpg',
-    local: './assets/images/cochlear_implant_2.jpg'
+    local: './assets/images/cochlear_implant_user.jpg'
   },
   {
     original: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Cochlear_implant_user_%28cropped%29.jpg',
-    local: './assets/images/cochlear_implant_user.jpg'
+    local: './assets/images/cochlear_implant_user1.jpg'
   },
   {
     original: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Four_generations_of_Advanced_Bionics_cochlear_implant_processors.jpg',
